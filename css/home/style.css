@@ -1,0 +1,67 @@
+.em-4{
+    font-size: 4em;
+}
+.ls-3{
+    letter-spacing: 3px;
+}
+.btn-pokemon{
+    width: 200px;
+    height: 115px;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Croissant One', cursive;
+    color: #D7CC39;
+    padding-top: 15px;
+}
+.btn-pokemon:hover{
+    filter: invert(100%);
+}
+.btn-scarlet{
+    background: url(../../img/scarlet.png);
+    background-size: cover;
+}
+.btn-violet{
+    background: url(../../img/violet.png);
+    background-size: cover;
+}
+#pokemon-caro.owl-carousel .owl-item img{
+    width: 200px;
+    height: 200px;
+    transition: 0.3s ease;
+}
+#pokemon-caro.owl-carousel .owl-item img:not(.center img){
+    opacity: 0.5;
+    scale: 0.75;
+}
+#pokemon-caro .owl-prev{
+    rotate: 180deg;
+}
+#pokemon-caro.owl-theme .owl-nav [class*=owl-]:hover{
+    background-color: #0000 !important;
+}
+#pokemon-caro.owl-theme .owl-nav img{
+    transition: 0.3s ease-in-out;
+}
+#pokemon-caro.owl-theme .owl-nav [class*=owl-]:hover img{
+    translate: 50%;
+    scale: 1.1;
+}
+#pokemon-caro .owl-nav{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+.circle-leaf{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 250px;
+    aspect-ratio: 1/1;
+}

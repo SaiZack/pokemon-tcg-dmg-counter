@@ -1,10 +1,25 @@
 @font-face {
-    font-family: 'Mooli'; /* Choose a suitable font name */
+    font-family: 'Mooli';
     src: url('../font/Mooli-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
-
+@font-face {
+    font-family: 'Pokemon Hollow';
+    src: url('../font/Pokemon-Hollow.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Pokemon Solid';
+    src: url('../font/Pokemon-Solid.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Croissant One';
+    src: url('../font/CroissantOne-Regular.ttf') format('truetype');
+}
+:root{
+    --scarlet-light:#9C2820;
+    --scarlet-dark:#730000;
+    --violet-light:#522074;
+    --violet-dark:#260145;
+}
 *{
     box-sizing: border-box;
     margin: 0;
@@ -15,7 +30,50 @@ body{
     justify-content: center;
     background: url(../img/pattern-white.jpg);
 }
-.battlefield{
+.bg-custom{
+    position: relative;
+    height: 100vh;
+    border: 3px solid #D7CC39;
+    outline: 3px solid #8F853B;
+    overflow: hidden;
+}
+.bg-custom::before{
+    content: '';
+    position: absolute;
+    background: linear-gradient(var(--scarlet-light), var(--scarlet-dark));
+    width: 50%;
+    height: 100%;
+    left: 0;
+    top:0;
+    z-index: -1;
+}
+.bg-custom::after{
+    content: '';
+    position: absolute;
+    background: linear-gradient(var(--violet-light), var(--violet-dark));
+    width: 50%;
+    height: 100%;
+    right: 0;
+    top:0;
+    z-index: -1;
+}
+.pokemon-text {
+    font-family: 'Pokemon Solid';
+    color: #ffcb05;
+    text-shadow: 3px 3px 0 #3466af,
+        -3px -3px 0 #3466af, 
+        -3px 3px 0 #3466af,
+        3px -3px 0 #3466af,
+        -8px 8px 0 #1d2c5e,
+        -7px 7px 0 #1d2c5e,
+        -6px 6px 0 #1d2c5e,
+        -5px 5px 0 #1d2c5e,
+        -4px 4px 0 #1d2c5e, 
+        -3px 3px 0 #1d2c5e,
+        -2px 2px 0 #1d2c5e,
+        -1px 1px 0 #1d2c5e;
+}
+/* .battlefield{
     height: 100vh;
     aspect-ratio: 3/4;
     max-width: 100%;
@@ -30,10 +88,10 @@ body{
     flex-direction: column;
 }
 #top{
-    background: linear-gradient(90deg, #B10020, #830000);
+    background: linear-gradient(90deg, var(--scarlet-light), var(--scarlet-dark));
 }
 #bot{
-    background: linear-gradient(-90deg, #650077, #300044);
+    background: linear-gradient(-90deg, var(--violet-light), var(--violet-dark));
 }
 .main {
     height: 50%;
@@ -66,4 +124,5 @@ body{
 #v_img{
     width: 100px;
     height: 100px;
-}
+} */
+

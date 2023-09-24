@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Dmg Counter</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/favicon48.png" type="image/png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+</head>
+
+<body>
+    <div class="battlefield">
+        <div class="field" id="top">
+            <div class="banch reverse">
+                <button class="btn pokemon" id="s_b1" data-bs-toggle="modal" data-bs-target="#s_modal">
+                    <h4 class="text-light">
+                        <span class="dmg">50</span>
+                    </h4>
+                    <h6 class="text-light poke-name">Grafaiai</h6>
+                    <h1 class="text-light d-none">+</h1>
+                </button>
+                <button class="btn pokemon" id="s_b2" data-bs-toggle="modal" data-bs-target="#s_modal">
+                    <h4 class="text-light">
+                        <span class="dmg">100</span>
+                    </h4>
+                    <h6 class="text-light poke-name">Skeledirge</h6>
+                    <h1 class="text-light d-none">+</h1>
+                </button>
+                <button class="btn pokemon" id="s_b3" data-bs-toggle="modal" data-bs-target="#s_modal">
+                    <h4 class="text-light">
+                        <span class="dmg">150</span>
+                    </h4>
+                    <h6 class="text-light poke-name">Copperajah</h6>
+                    <h1 class="text-light d-none">+</h1>
+                </button>
+                <button class="btn pokemon" id="s_b4" data-bs-toggle="modal" data-bs-target="#s_modal">
+                    <h4 class="text-light">
+                        <span class="dmg">200</span>
+                    </h4>
+                    <h6 class="text-light poke-name">Jangmo-o</h6>
+                    <h1 class="text-light d-none">+</h1>
+                </button>
+                <button class="btn pokemon" id="s_b5" data-bs-toggle="modal" data-bs-target="#s_modal">
+                    <h4 class="text-light d-none">
+                        <span class="dmg"></span>
+                    </h4>
+                    <h6 class="text-light poke-name d-none"></h6>
+                    <h1 class="text-light">+</h1>
+                </button>
+            </div>
+            <button class="main reverse btn" data-bs-toggle="modal" data-bs-target="#s_modal">
+                <h1 class="text-light">
+                    <span class="main-dmg" id="s_main_dmg">300</span>
+                    /
+                    <span id="s_main_hp">600</span>
+                </h1>
+                <h1 class="text-light poke-name" id="s_main_name">Tinkaton</h1>
+            </button>
+        </div>
+        <div class="field" id="bot">
+            <button class="main btn text-light" id="v_main" data-bs-toggle="modal" data-bs-target="#v_modal">
+                <h1 class="hp d-none">
+                    <span class="main-dmg">0</span>
+                    /
+                    <span class="main-hp">0</span>
+                </h1>
+                <h1 class="poke-name" id="v_main_name"></h1>
+                <h1>+</h1>
+            </button>
+            <div class="banch">
+                <button class="btn text-light pokemon" id="v_b1" data-bs-toggle="modal" data-bs-target="#v_modal">
+                    <h4 class="">
+                        <span class="dmg"></span>
+                    </h4>
+                    <h6 class="poke-name"></h6>
+                    <h1 class="plus">+</h1>
+                </button>
+                <button class="btn text-light pokemon" id="v_b2" data-bs-toggle="modal" data-bs-target="#v_modal">
+                    <h4 class="">
+                        <span class="dmg"></span>
+                    </h4>
+                    <h6 class="poke-name"></h6>
+                    <h1 class="plus">+</h1>
+                </button>
+                <button class="btn text-light pokemon" id="v_b3" data-bs-toggle="modal" data-bs-target="#v_modal">
+                    <h4 class="">
+                        <span class="dmg"></span>
+                    </h4>
+                    <h6 class="poke-name"></h6>
+                    <h1 class="plus">+</h1>
+                </button>
+                <button class="btn text-light pokemon" id="v_b4" data-bs-toggle="modal" data-bs-target="#v_modal">
+                    <h4 class="">
+                        <span class="dmg"></span>
+                    </h4>
+                    <h6 class="poke-name"></h6>
+                    <h1 class="plus">+</h1>
+                </button>
+                <button class="btn text-light pokemon" id="v_b5" data-bs-toggle="modal" data-bs-target="#v_modal">
+                    <h4 class="d-none">
+                        <span class="dmg"></span>
+                    </h4>
+                    <h6 class="poke-name d-none"></h6>
+                    <h1 class="plus">+</h1>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scarlet Modal -->
+    <div class="modal fade reverse" id="s_modal" tabindex="-1" aria-labelledby="s_modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="s_modal_name">Scarlet</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Violet Modal -->
+    <div class="modal fade" id="v_modal" tabindex="-1" aria-labelledby="v_modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="v_modal_name"></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center flex-column">
+                    <image src="img/logo.png" id="v_img"></image>
+                    
+                    <form id="v_add_form" class="w-100 d-none">
+                        <select name="v_poke_name" id="v_poke_name" class="select2 form-select" data-placeholder="Select a pokemon">
+                            <option value=""></option>
+                        </select>
+                        
+                        <input type="number" name="v_poke_hp" id="v_poke_hp" class="form-control mt-4" placeholder="HP">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary d-none add-btn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/app.js"></script>    
+    <script src="js/methods.js"></script>    
+</body>
+
+</html>
