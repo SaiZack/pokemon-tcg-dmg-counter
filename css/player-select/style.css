@@ -1,0 +1,18 @@
+.field{
+    width: 100%;
+    height: 50%;
+    /* border: 3px inset #D7CC39; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#top{
+    background: linear-gradient(90deg, var(--scarlet-light), var(--scarlet-dark));
+}
+#bot{
+    background: linear-gradient(-90deg, var(--violet-light), var(--violet-dark));
+}
+.player-name{
+    width: 300px !important;
+    max-width: 100%;
+}

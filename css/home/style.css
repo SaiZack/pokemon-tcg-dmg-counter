@@ -1,19 +1,5 @@
-.em-4{
-    font-size: 4em;
-}
 .ls-3{
     letter-spacing: 3px;
-}
-.btn-pokemon{
-    width: 200px;
-    height: 115px;
-    display: grid;
-    place-content: center;
-    text-decoration: none;
-    font-size: 1.5em;
-    font-family: 'Croissant One', cursive;
-    color: #D7CC39;
-    padding-top: 15px;
 }
 .btn-pokemon:hover{
     filter: invert(100%);

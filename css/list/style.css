@@ -1,0 +1,25 @@
+.nav-link:not(.active){
+    color: var(--scarlet-light) !important;
+}
+.nav-link.active{
+    color: var(--violet-light) !important;
+}
+td{
+    min-width: 100px !important;
+}
+.dataTables_length, .dataTables_filter{
+    padding-block: 5px
+}
+.back-home{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    translate: -100% -50%;
+    color: var(--violet-light);
+    transition: 1s ease-in-out;
+}
+.back-home:hover{
+    scale: 1.5;
+    rotate: 360deg;
+    color: var(--violet-dark);
+}

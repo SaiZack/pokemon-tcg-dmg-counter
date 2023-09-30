@@ -19,6 +19,11 @@
     --scarlet-dark:#730000;
     --violet-light:#522074;
     --violet-dark:#260145;
+    --gold: #ffcb05;
+    --dark-gold: #8F853B;
+    --pale-gold: #D7CC39;
+    --dia-btn-size: 50px;
+    --dia-line: 4px;
 }
 *{
     box-sizing: border-box;
@@ -33,9 +38,10 @@ body{
 .bg-custom{
     position: relative;
     height: 100vh;
-    border: 3px solid #D7CC39;
-    outline: 3px solid #8F853B;
+    border: 3px solid var(--pale-gold);
+    outline: 3px solid var(--dark-gold);
     overflow: hidden;
+    border-radius: 10px;
 }
 .bg-custom::before{
     content: '';
@@ -59,7 +65,7 @@ body{
 }
 .pokemon-text {
     font-family: 'Pokemon Solid';
-    color: #ffcb05;
+    color: var(--gold) ;
     text-shadow: 3px 3px 0 #3466af,
         -3px -3px 0 #3466af, 
         -3px 3px 0 #3466af,
@@ -73,26 +79,76 @@ body{
         -2px 2px 0 #1d2c5e,
         -1px 1px 0 #1d2c5e;
 }
-/* .battlefield{
-    height: 100vh;
-    aspect-ratio: 3/4;
-    max-width: 100%;
-    background: skyblue;
+.btn-pokemon{
+    width: 200px;
+    height: 115px;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Croissant One', cursive;
+    color: var(--pale-gold);
+    padding-top: 15px;
 }
-.field{
-    width: 100%;
-    height: 50%;
-    border: 3px inset #D7CC39;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.btn-scarlet{
+    background: url(../../img/scarlet.png);
+    background-size: cover;
 }
-#top{
-    background: linear-gradient(90deg, var(--scarlet-light), var(--scarlet-dark));
+.btn-violet{
+    background: url(../../img/violet.png);
+    background-size: cover;
 }
-#bot{
-    background: linear-gradient(-90deg, var(--violet-light), var(--violet-dark));
+.btn-diamond{
+    position: absolute;
+    width: var(--dia-btn-size);
+    height: var(--dia-btn-size);
+    background-color: var(--gold);
+    top: calc(50% - calc(var(--dia-btn-size)/2));
+    rotate: 45deg;
+    outline: var(--dia-line) solid var(--gold);
+    transition: 0.5s ease-in-out;
+    display: grid;
+    place-content: center;
 }
+.btn-diamond:hover{
+    translate: 0;
+    rotate: -45deg;
+}
+.btn-diamond i{
+    rotate: -45deg;
+    transition: 0.5s ease-in-out;
+}
+.btn-diamond:hover i{
+    rotate: 45deg;
+    translate: 0 0;
+    scale: 1.5;
+}
+.dia-start{
+    translate: -50%;
+    left: 0;
+    border: var(--dia-line) solid var(--scarlet-light);
+    color: var(--scarlet-light);
+}
+.dia-start i{
+    translate: 50% -50%;
+}
+.dia-end{
+    translate: 50%;
+    right: 0;
+    border: var(--dia-line) solid var(--violet-light);
+    color: var(--violet-light);
+}
+.dia-end i{
+    translate: -50% 50%;
+}
+.em-4{
+    font-size: 4em;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+
+/* 
 .main {
     height: 50%;
     width: 100%;

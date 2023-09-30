@@ -8,6 +8,3 @@
 //     $(modal).find('form').addClass('d-none')
 //     $(modal).find('.add-btn').addClass('d-none')
 // }
-// function addPokemon(place){
-    
-// }

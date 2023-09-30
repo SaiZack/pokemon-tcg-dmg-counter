@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+    $('[data-bs-toggle="tooltip"]').each(function () {
+        $(this).tooltip({
+            delay: { "show": 500, "hide": 0 }
+        });
+    });
+    
     // const v = $('#v_modal');
     // const s = $('#s_modal');
 
