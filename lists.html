@@ -56,7 +56,9 @@
                     <button class="nav-link" id="pokemon-tab" data-bs-toggle="tab" data-bs-target="#pokemon-pane"
                         type="button" role="tab" aria-controls="pokemon-pane" aria-selected="false">
                         <span class="d-none d-sm-inline">Pokemon</span>
-                        <i class="fa-solid fa-baseball"></i>
+                        <span class="pokeball position-relative">
+                            <i class="fa-solid fa-circle-dot"></i>
+                        </span>
                     </button>
                 </li>
                 <a href="/index.html" class="back-home">
@@ -82,11 +84,10 @@
                     <table class="table data-table table-striped w-100" id="player">
                     </table>
                 </div>
-                <div class="tab-pane fade bg-white p-4 rounded-bottom-2 border border-top-0 shadow" id="pokemon-pane"
+                <div class="tab-pane fade bg-white p-sm-4 rounded-bottom-2 border border-top-0 shadow" id="pokemon-pane" style="max-height: 65vh; overflow-x: hidden;"
                     role="tabpanel" aria-labelledby="pokemon" tabindex="0">
-                    <!-- <table class="table data-table table-striped w-100" id="pokemon">
-
-                    </table> -->
+                    <div class="row" id="pokedex">
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,7 +106,7 @@
     <!-- internal js -->
     <script type="module" src="js/list/app.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/methods.js"></script>
+    <script src="js/helper.js"></script>
 </body>
 
 </html>

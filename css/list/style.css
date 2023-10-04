@@ -23,3 +23,57 @@ td{
     rotate: 360deg;
     color: var(--violet-dark);
 }
+.pokeball::after{
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 10%;
+    background: var(--bs-nav-tabs-link-active-bg);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+.pokedex-body{
+    border: 1px solid var(--pale-gold);
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+.pokedex-body .pokedex-img{
+    scale: 0.9;
+    transition: 0.2s ease-in-out;
+}
+.pokedex-body:hover{
+    translate: 0 -5%;
+}
+.pokedex-body:hover .pokedex-img{
+    scale: 1
+}
+.pokedex-footer{
+    padding: 10px;
+    border-top: 2px solid var(--dark-gold);
+    box-shadow: 0 -2px 0 0 var(--gold);
+    position: relative;
+
+}
+.pokedex-footer::before{
+    content: '';
+    position: absolute;
+    width: 5%;
+    aspect-ratio: 1/1;
+    background-color: var(--dark-gold);
+    rotate: 45deg;
+    top: 0;
+    left: 0;
+    translate: -50% -50%;
+}
+.pokedex-footer::after{
+    content: '';
+    position: absolute;
+    width: 5%;
+    aspect-ratio: 1/1;
+    background-color: var(--dark-gold);
+    rotate: 45deg;
+    top: 0;
+    right: 0;
+    translate: 50% -50%;
+}

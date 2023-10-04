@@ -16,3 +16,29 @@
     width: 300px !important;
     max-width: 100%;
 }
+.btn-centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+.pokemon-btn{
+    background: white url(/img/btnBorder.png) no-repeat center center / cover;
+    border-radius: 100px;
+    border: none;
+    aspect-ratio: 265/61;
+    font-weight: bold;
+}
+.pokemon-btn:hover{
+    background-color: var(--light-gold);
+}
+.pokemon-arrow{
+    width: 20px;
+    transition: 0.3s ease;
+}
+.pokemon-btn:hover .pokemon-arrow{
+    translate: 50%;
+}
+#coinFlip .modal-content {
+    background: url(../../img/pattern-white.jpg);
+}

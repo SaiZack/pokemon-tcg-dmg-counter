@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG Dmg Counter</title>
+    <link rel="icon" href="img/favicon48.png" type="image/png">
+
+    <!-- internal css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/player-select/style.css">
+
+    <!-- external css -->
+    <link rel="stylesheet" href="css/external/bootstrap.min.css">
+    <link rel="stylesheet" href="css/external/select2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container vh-100 p-0 bg-custom">
+        <a href="/index.html" class="text-decoration-none btn-diamond dia-start" data-bs-toggle="tooltip" data-bs-title="Back"><i class="fa-solid fa-circle-chevron-left"></i></a>
+        <a href="/lists.html#player" class="text-decoration-none btn-diamond dia-end" data-bs-toggle="tooltip" data-bs-title="Players"><i class="fa-solid fa-user"></i></a>
+        <div class="field d-flex justify-content-center align-items-center" id="top">
+            
+        </div>
+        <button id="start" class="start-btn text-center py-1 px-4 px-sm-5">Start <img src="/img/arrow.png" alt="arrow" class="start-arrow ms-1"></button>
+        <div class="field d-flex justify-content-center align-items-center" id="bot">
+            
+        </div>
+    </div>
+
+    <!-- external js -->
+    <script src="js/external/jquery.min.js"></script>
+    <script src="js/external/owl.carousel.min.js"></script>
+    <script src="js/external/bootstrap.bundle.min.js"></script>
+    <script src="js/external/select2.min.js"></script>
+
+    <!-- internal js -->
+    <script src="js/app.js"></script>
+    <script type="module" src="js/battle-field/app.js"></script>
+    <!-- <script src="js/helper.js"></script> -->
+</body>
+
+</html>

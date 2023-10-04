@@ -2,40 +2,67 @@
     font-family: 'Mooli';
     src: url('../font/Mooli-Regular.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Pokemon Hollow';
     src: url('../font/Pokemon-Hollow.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Pokemon Solid';
     src: url('../font/Pokemon-Solid.ttf') format('truetype');
 }
+
 @font-face {
     font-family: 'Croissant One';
     src: url('../font/CroissantOne-Regular.ttf') format('truetype');
 }
-:root{
-    --scarlet-light:#9C2820;
-    --scarlet-dark:#730000;
-    --violet-light:#522074;
-    --violet-dark:#260145;
+
+:root {
+    --scarlet-light: #9C2820;
+    --scarlet-dark: #730000;
+    --violet-light: #522074;
+    --violet-dark: #260145;
     --gold: #ffcb05;
     --dark-gold: #8F853B;
     --pale-gold: #D7CC39;
+    --light-gold: #FDD23E;
     --dia-btn-size: 50px;
     --dia-line: 4px;
+
+    --normal-type: #9099A1;
+    --fire-type: #FF4136;
+    --water-type: #3EB9F5;
+    --grass-type: #15B424;
+    --electric-type: #FCDE40;
+    --ice-type: #74CEC0;
+    --fighting-type: #FF7512;
+    --poison-type: #AB6AC8;
+    --ground-type: #4A2D1B;
+    --flying-type: #8FA8DD;
+    --psychic-type: #B960C4;
+    --bug-type: #90C12C;
+    --rock-type: #C7B78B;
+    --ghost-type: #5269AC;
+    --dragon-type: #FFAB00;
+    --dark-type: #666666;
+    --steel-type: #69859E;
+    --fairy-type: #FF75A8;
 }
-*{
+
+* {
     box-sizing: border-box;
     margin: 0;
     font-family: 'Mooli', sans-serif;
 }
-body{
+
+body {
     display: flex;
     justify-content: center;
     background: url(../img/pattern-white.jpg);
 }
-.bg-custom{
+
+.bg-custom {
     position: relative;
     height: 100vh;
     border: 3px solid var(--pale-gold);
@@ -43,43 +70,47 @@ body{
     overflow: hidden;
     border-radius: 10px;
 }
-.bg-custom::before{
+
+.bg-custom::before {
     content: '';
     position: absolute;
     background: linear-gradient(var(--scarlet-light), var(--scarlet-dark));
     width: 50%;
     height: 100%;
     left: 0;
-    top:0;
+    top: 0;
     z-index: -1;
 }
-.bg-custom::after{
+
+.bg-custom::after {
     content: '';
     position: absolute;
     background: linear-gradient(var(--violet-light), var(--violet-dark));
     width: 50%;
     height: 100%;
     right: 0;
-    top:0;
+    top: 0;
     z-index: -1;
 }
+
 .pokemon-text {
     font-family: 'Pokemon Solid';
-    color: var(--gold) ;
+    color: var(--gold);
     text-shadow: 3px 3px 0 #3466af,
-        -3px -3px 0 #3466af, 
+        -3px -3px 0 #3466af,
         -3px 3px 0 #3466af,
         3px -3px 0 #3466af,
         -8px 8px 0 #1d2c5e,
         -7px 7px 0 #1d2c5e,
         -6px 6px 0 #1d2c5e,
         -5px 5px 0 #1d2c5e,
-        -4px 4px 0 #1d2c5e, 
+        -4px 4px 0 #1d2c5e,
         -3px 3px 0 #1d2c5e,
         -2px 2px 0 #1d2c5e,
         -1px 1px 0 #1d2c5e;
 }
-.btn-pokemon{
+
+.btn-pokemon {
     width: 200px;
     height: 115px;
     display: grid;
@@ -90,15 +121,18 @@ body{
     color: var(--pale-gold);
     padding-top: 15px;
 }
-.btn-scarlet{
+
+.btn-scarlet {
     background: url(../../img/scarlet.png);
     background-size: cover;
 }
-.btn-violet{
+
+.btn-violet {
     background: url(../../img/violet.png);
     background-size: cover;
 }
-.btn-diamond{
+
+.btn-diamond {
     position: absolute;
     width: var(--dia-btn-size);
     height: var(--dia-btn-size);
@@ -110,41 +144,50 @@ body{
     display: grid;
     place-content: center;
 }
-.btn-diamond:hover{
+
+.btn-diamond:hover {
     translate: 0;
     rotate: -45deg;
 }
-.btn-diamond i{
+
+.btn-diamond i {
     rotate: -45deg;
     transition: 0.5s ease-in-out;
 }
-.btn-diamond:hover i{
+
+.btn-diamond:hover i {
     rotate: 45deg;
     translate: 0 0;
     scale: 1.5;
 }
-.dia-start{
+
+.dia-start {
     translate: -50%;
     left: 0;
     border: var(--dia-line) solid var(--scarlet-light);
     color: var(--scarlet-light);
 }
-.dia-start i{
+
+.dia-start i {
     translate: 50% -50%;
 }
-.dia-end{
+
+.dia-end {
     translate: 50%;
     right: 0;
     border: var(--dia-line) solid var(--violet-light);
     color: var(--violet-light);
 }
-.dia-end i{
+
+.dia-end i {
     translate: -50% 50%;
 }
-.em-4{
+
+.em-4 {
     font-size: 4em;
 }
-.cursor-pointer{
+
+.cursor-pointer {
     cursor: pointer;
 }
 
@@ -181,4 +224,3 @@ body{
     width: 100px;
     height: 100px;
 } */
-

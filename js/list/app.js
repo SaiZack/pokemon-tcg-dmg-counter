@@ -15,7 +15,7 @@ $(document).ready(function () {
     function initDataTable(table) {
         const id = table.attr('id');
         let data, cols;
-        let i =  1
+        let i = 1
 
         switch (id) {
             // case "history":
@@ -27,7 +27,7 @@ $(document).ready(function () {
                     {
                         data: null,
                         title: '#',
-                        render: ()=>{return i++},
+                        render: () => { return i++ },
                     },
                     { data: 'name', title: 'Name' },
                     { data: 'winCount', title: 'Win Count' },
@@ -84,11 +84,86 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 playerRepo.deletePlayer(id)
-                $('#player').clear().draw();
-                data = playerRepo.getAllPlayers();
-                $('#player').rows.add(data).draw();
+                $(window).load()
             }
         });
     });
+
+    const container = $('#pokemon-pane');
+    const pokedex = $('#pokedex');
+    let offset = 0;
+    const limit = 12;
+    let isLoading = false;
+
+    function loadMoreData() {
+        if (isLoading) return;
+        
+        const containerHeight = container.height();
+        const scrollTop = container.scrollTop();
+        const scrollHeight = pokedex.height();
+        const remainingHeight = scrollHeight - scrollTop - containerHeight;
+
+        if (remainingHeight <= 100) {
+            isLoading = true;
+            $.ajax({
+                url: `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
+                method: "GET",
+                dataType: "json",
+                success: function (data) {
+                    const promises = data.results.map(pokemon => pokemonInfo(pokemon.url));
+                    Promise.all(promises)
+                        .then(pokemonData => {
+                            pokemonData.forEach(pokemon => {
+                                $('#pokedex').append(createPokemonHTML(pokemon));
+                            });
+
+                            offset += limit;
+                            isLoading = false;
+                        })
+                        .catch(error => {
+                            console.error("Error fetching Pokemon data: " + error);
+                            isLoading = false;
+                        });
+                },
+                error: function (xhr, status, error) {
+                    console.error(status + ": " + error);
+                    isLoading = false;
+                }
+            });
+        }
+    }
+
+    function pokemonInfo(url) {
+        return $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json"
+        });
+    }
+
+    function createPokemonHTML(pokemon) {
+        const types = pokemon.types.map(type => `
+            <span class="pe-1 pb-1">
+                <span class="badge rounded-pill px-4" style="background : var(--${type.type.name}-type)">${type.type.name}</span>
+            </span>
+        `).join('');
+
+        return `
+            <a href="https://www.pokemon.com/us/pokedex/${pokemon.name}" target="_blank" class="col-sm-6 col-lg-3 p-3 text-decoration-none">
+                <div class="bg-light rounded pokedex-body h-100">
+                    <img src="${pokemon.sprites.other['official-artwork'].front_default}" alt="" width="100%" class="pokedex-img">
+                    <div class="pokedex-footer">
+                        <div class="text-center fw-bold text-dark">${pokemon.name.toUpperCase()}</div>
+                        <div class="d-flex flex-wrap mt-2">
+                            ${types}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        `;
+    }
+    container.on('scroll', loadMoreData);
+    loadMoreData();
+
 })
 

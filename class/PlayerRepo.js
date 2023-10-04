@@ -19,16 +19,15 @@ export class PlayerRepo {
             this.saveToLocalStorage();
             return player;
         }
-        
     }
 
-    updatePlayer(playerId, newName) {
-        const player = this.players.find(p => p.id === playerId);
-        if (player) {
-            player.name = newName;
-            this.saveToLocalStorage();
-        }
-    }
+    // updatePlayer(playerId, newName) {
+    //     const player = this.players.find(p => p.id === playerId);
+    //     if (player) {
+    //         player.name = newName;
+    //         this.saveToLocalStorage();
+    //     }
+    // }
 
     deletePlayer(playerId) {
         const index = this.players.findIndex(p => p.id === playerId);
@@ -47,6 +46,10 @@ export class PlayerRepo {
     }
     getPlayerByName(playerName) {
         return this.players.find(player => player.name === playerName);
+    }
+    deleteAll() {
+        this.players = []; 
+        this.saveToLocalStorage();
     }
 }
 

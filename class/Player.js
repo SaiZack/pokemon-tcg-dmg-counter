@@ -7,11 +7,7 @@ export class Player {
     }
 
     static generateUniqueId() {
-        if (!Player.counter) {
-            Player.counter = 1;
-        } else {
-            Player.counter++;
-        }
-        return Player.counter;
+        const timestamp = Date.now().toString(36);
+        return timestamp;
     }
 }
