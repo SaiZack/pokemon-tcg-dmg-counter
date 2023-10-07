@@ -1,3 +1,9 @@
+
+$(window).on('load', function () {
+    setTimeout(function () {
+        $("#loading-screen").fadeOut();
+    }, 1000);
+});
 $(document).ready(function () {
 
     $('[data-bs-toggle="tooltip"]').each(function () {
@@ -5,7 +11,27 @@ $(document).ready(function () {
             delay: { "show": 500, "hide": 0 }
         });
     });
-    
+
+    // coin flip
+    $('#coin').on('click', function(){
+        $('#skip').html(`Next <img src="/img/arrow.png"
+        alt="arrow" class="pokemon-arrow ms-1">`)
+        var flipResult = Math.floor(Math.random() * 2);
+        $('#coin').removeClass();
+        setTimeout(function(){
+          if(flipResult === 1){
+            $('#coin').addClass('heads animate');
+            console.log('head')
+          }
+          else{
+            $('#coin').addClass('tails animate');
+            console.log('tail')
+          }
+        }, 100);
+        setTimeout(function(){
+          $('#coin').removeClass('animate');
+        }, 3000)
+      });
     // const v = $('#v_modal');
     // const s = $('#s_modal');
 

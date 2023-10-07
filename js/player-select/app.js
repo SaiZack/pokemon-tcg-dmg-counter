@@ -36,7 +36,7 @@ $(document).ready(function () {
         ele.select2("close")
     }
 
-    // $('#start').hide();
+    $('#start').hide();
     $('.player-name').change(function () {
         const selectValues = $('.player-name').map(function () {
             return $(this).val();
@@ -53,14 +53,13 @@ $(document).ready(function () {
         }
     });
 
-    // $('#start').click(function () {
-
-        // const match = matchRepo.createMatch()
-        // $('.player-name').each(function () {
-        //    battleRepo.createBattle(match.id, this.value, this.name)
-        // })
-        // const url = `battle-field.html?matchId=${encodeURIComponent(match.id)}`;
-        // $(location).attr('href', url);
-    // })
+    $('#skip').click(function () {
+        const match = matchRepo.createMatch()
+        $('.player-name').each(function () {
+           battleRepo.createBattle(match.id, this.value, this.name)
+        })
+        const url = `battle-field.html?matchId=${encodeURIComponent(match.id)}`;
+        $(location).attr('href', url);
+    })
 })
 

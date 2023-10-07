@@ -22,6 +22,9 @@
 </head>
 
 <body>
+    <div id="loading-screen">
+        <img src="/img/circle-leaf.png" id="loading-spinner"></img>
+    </div>
     <div class="container vh-100 p-0 bg-custom">
         <a href="/index.html" class="text-decoration-none btn-diamond dia-start" data-bs-toggle="tooltip"
             data-bs-title="Back"><i class="fa-solid fa-circle-chevron-left"></i></a>
@@ -50,12 +53,15 @@
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="coinFlipLabel">Flip Coin</h1>
                 </div>
-                <div class="modal-body vh-50">
+                <div class="modal-body vh-50 d-flex justify-content-center align-items-center">
+                    <div id="coin">
+                        <div class="side" id="heads">Heads</div>
+                        <div class="side" id="tails">Tails</div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="skip"
-            class="pokemon-btn text-center py-1 px-2 px-sm-5">Skip <img src="/img/arrow.png" alt="arrow"
-                class="pokemon-arrow ms-1"></button>
+                    <button id="skip" class="pokemon-btn text-center py-1 px-2 px-sm-5">Skip <img src="/img/arrow.png"
+                            alt="arrow" class="pokemon-arrow ms-1"></button>
                 </div>
             </div>
         </div>
