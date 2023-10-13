@@ -9,6 +9,7 @@ export class Battle {
 
     static generateUniqueId() {
         const timestamp = Date.now().toString(36);
-        return timestamp;
+        const randomString = Math.random().toString(36).substr(2, 2);
+        return randomString + timestamp;
     }
 }

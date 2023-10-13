@@ -36,8 +36,8 @@ export class BattleRepo {
         return this.battles;
     }
 
-    getBattleById(battleId) {
-        return this.battles.find(battle => battle.id === battleId);
+    getBattlesByMatch(matchId) {
+        return this.battles.filter(battle => battle.match_id === matchId);
     }
     deleteAll() {
         this.battles = []; 

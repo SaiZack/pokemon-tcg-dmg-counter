@@ -36,7 +36,7 @@ $(document).ready(function () {
         ele.select2("close")
     }
 
-    $('#start').hide();
+    // $('#start').hide();
     $('.player-name').change(function () {
         const selectValues = $('.player-name').map(function () {
             return $(this).val();
