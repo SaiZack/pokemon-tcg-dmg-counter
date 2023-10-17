@@ -81,6 +81,10 @@
                 <div class="modal-body end-container p-4">
                     <div class="row">
                         <div class="col-sm-6 col-md-4 p-2">
+                            <input type="radio" class="btn-check not-complete" name="condition" id="complete0" value="0" checked>
+                            <label class="btn w-100 h-100" for="complete0">Save for Later</label>
+                        </div>
+                        <div class="col-sm-6 col-md-4 p-2">
                             <input type="radio" class="btn-check" name="condition" id="complete1" value="1">
                             <label class="btn w-100 h-100" for="complete1">Take All Prize Cards</label>
                         </div>
@@ -100,10 +104,6 @@
                             <input type="radio" class="btn-check" name="condition" id="complete5" value="5">
                             <label class="btn w-100 h-100" for="complete5">Conceded</label>
                         </div>
-                        <div class="col-sm-6 col-md-4 p-2">
-                            <input type="radio" class="btn-check not-complete" name="complete" id="complete6" value="6" checked>
-                            <label class="btn w-100 h-100" for="complete6">Save for Later</label>
-                        </div>
                     </div>
                     <div class="winner-select">
                         <hr>
@@ -115,7 +115,7 @@
                 <div class="modal-footer end-container">
                     <div class="d-flex justify-content-between w-100">
                         <button class="btn btn-secondary px-4" data-bs-dismiss="modal">Cancel</button>
-                        <button class="btn btn-primary px-4">Confirm Exit <i class="fa-solid fa-arrow-right-from-bracket ms-2"></i> </button>
+                        <button class="btn btn-primary px-4" id="confirm_exit">Confirm Exit <i class="fa-solid fa-arrow-right-from-bracket ms-2"></i> </button>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
     <!-- internal js -->
     <script src="js/app.js"></script>
     <script type="module" src="js/battle-field/app.js"></script>
-    <!-- <script src="js/helper.js"></script> -->
+    <script src="js/helper.js"></script>
 </body>
 
 </html>

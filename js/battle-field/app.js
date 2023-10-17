@@ -8,6 +8,7 @@ $(document).ready(function () {
     const title = $('#modal_title')
     const battles = battleRepo.getBattlesByMatch(match_id);
     var players = [];
+    console.log(matchRepo.getMatchById(match_id))
     for (var battle of battles) {
         players[battle.player_position] = playerRepo.getPlayerById(battle.player_id)
     }
@@ -45,6 +46,17 @@ $(document).ready(function () {
     $('.end-container .btn-check.not-complete').click(() => {
         $('.winner-select').hide()
     })
+
+    $('#confirm_exit').click(function(){
+        const complete_status = $('input.btn-check[name="condition"]:checked').val()
+        matchRepo.endMatch(match_id, complete_status)
+        if(complete_status > 0){
+            
+        }
+        console.log(matchRepo.getMatchById(match_id))
+
+    })
+
 })
 
 function hideModalComponents() {
