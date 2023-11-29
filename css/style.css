@@ -377,3 +377,28 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* Default font size for all screens */
+.tab-content * {
+    font-size: 16px;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+    .tab-content * {
+        font-size: 12px !important;
+    }
+}
+
+/* Media query for tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .tab-content * {
+        font-size: 14px;
+    }
+}
+/* Media query for laptops */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    .tab-content * {
+        font-size: 16px;
+    }
+}

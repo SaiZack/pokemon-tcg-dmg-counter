@@ -1,4 +1,6 @@
 import { playerRepo } from '../../class/PlayerRepo.js';
+import { matchRepo } from '../../class/MatchRepo.js';
+import { battleRepo } from '../../class/BattleRepo.js';
 
 
 $(document).ready(function () {
@@ -18,9 +20,74 @@ $(document).ready(function () {
         let i = 1
 
         switch (id) {
-            // case "history":
-            // case "ongoing":
-            // case "pokemon":
+            case "history":
+                data = matchRepo.getCompletedMatches();
+                cols = [
+                    {
+                        data: null,
+                        title: '#',
+                        render: () => { return i++ },
+                    },
+                    // {
+                    //     data: null,
+                    //     title: "Players",
+                    //     render: function (data, type, row) {
+                    //         var battles = battleRepo.getBattlesByMatch(data.id)
+                    //         var scarlet = playerRepo.getPlayerById(battles[0].player_id)
+                    //         var violet = playerRepo.getPlayerById(battles[1].player_id)
+
+                    //         return scarlet.name + " vs " + violet.name
+                    //     }
+                    // },
+                    { data: 'start_datetime', title: 'Start Date Time' },
+                    { data: 'end_datetime', title: 'End Date Time' },
+                    { 
+                        data: 'complete_status', 
+                        title: 'Complete Status',
+                        render: function (data, type, row) {
+                            return complete_conditions[data];
+                        } 
+                    },
+                    {
+                        data: null,
+                        title: "Delete",
+                        render: function (data, type, row) {
+                            const deleteBtn = `<i class="fa fa-trash delete-match text-danger cursor-pointer" data-match-id="${row.id}" data-table="history"></i>`;
+                            return deleteBtn;
+                        }
+                    }
+                ];
+                break;
+            case "ongoing":
+                data = matchRepo.getOngoingMatches();
+                cols = [
+                    {
+                        data: null,
+                        title: '#',
+                        render: () => { return i++ },
+                    },
+                    // {
+                    //     data: null,
+                    //     title: "Players",
+                    //     render: function (data, type, row) {
+                    //         var battles = battleRepo.getBattlesByMatch(data.id)
+                    //         var scarlet = playerRepo.getPlayerById(battles[0].player_id)
+                    //         var violet = playerRepo.getPlayerById(battles[1].player_id)
+                    //         return scarlet.name + " vs " + violet.name
+                    //     }
+                    // },
+                    { data: 'start_datetime', title: 'Start Date Time' },
+                    {
+                        data: null,
+                        title: "Delete",
+                        render: function (data, type, row) {
+                            const deleteBtn = `<i class="fa fa-trash delete-match text-danger cursor-pointer" data-match-id="${row.id}" data-table="ongoing"></i>`;
+                            return deleteBtn;
+                        }
+                    }
+                ];
+                break;
+            case "pokemon":
             case "player":
                 data = playerRepo.getAllPlayers();
                 cols = [
@@ -84,7 +151,27 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 playerRepo.deletePlayer(id)
-                $(window).load()
+                $('#player').DataTable().destroy();
+                initDataTable($(`#player.data-table`));
+            }
+        });
+    });
+    $(document).on('click', '.delete-match', function () {
+        const id = $(this).data('match-id')
+        const table = $(this).data('table')
+        Swal.fire({
+            title: 'Delete Player',
+            text: `Do you want to delete this match? This action cannot be undone.`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                matchRepo.deleteMatch(id)
+                $(`#${table}`).DataTable().destroy();
+                initDataTable($(`#${table}`));
             }
         });
     });

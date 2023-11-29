@@ -56,7 +56,8 @@ $(document).ready(function () {
     $('#skip').click(function () {
         const match = matchRepo.createMatch()
         $('.player-name').each(function () {
-           battleRepo.createBattle(match.id, this.value, this.name)
+           battleRepo.createBattle(match.id, this.value, this.name) 
+           playerRepo.addTotalPlay(this.value)
         })
         const url = `battle-field.html?matchId=${encodeURIComponent(match.id)}`;
         $(location).attr('href', url);

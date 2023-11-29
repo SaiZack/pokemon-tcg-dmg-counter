@@ -11,7 +11,7 @@ export class PlayerRepo {
 
     createPlayer(name) {
         const old = this.getPlayerByName(name)
-        if(old){
+        if (old) {
             return old;
         } else {
             const player = new Player(name);
@@ -36,6 +36,16 @@ export class PlayerRepo {
             this.saveToLocalStorage();
         }
     }
+    addWinCount(playerId) {
+        const player = this.players.find(p => p.id === playerId);
+        player.winCount++;
+        this.saveToLocalStorage();
+    }
+    addTotalPlay(playerId) {
+        const player = this.players.find(p => p.id === playerId);
+        player.totalPlay++;
+        this.saveToLocalStorage();
+    }
 
     getAllPlayers() {
         return this.players;
@@ -48,7 +58,7 @@ export class PlayerRepo {
         return this.players.find(player => player.name === playerName);
     }
     deleteAll() {
-        this.players = []; 
+        this.players = [];
         this.saveToLocalStorage();
     }
 }

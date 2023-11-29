@@ -16,8 +16,8 @@ export class BattleRepo {
         return battle;
     }
 
-    winBattle(battleId, playerId) {
-        const battle = this.battles.find(b => b.id === battleId && b.player_id === playerId);
+    winBattle(matchId, playerId) {
+        const battle = this.battles.find(b => b.match_id === matchId && b.player_id === playerId);
         if (battle) {
             battle.win_status = 1;
             this.saveToLocalStorage();

@@ -44,6 +44,13 @@ export class MatchRepo {
     getAllMatches() {
         return this.matches;
     }
+    getOngoingMatches() {
+        return this.matches.filter(match => match.end_datetime === null || match.complete_status == 0);
+    }
+
+    getCompletedMatches() {
+        return this.matches.filter(match => match.end_datetime !== null && match.complete_status != 0);
+    }
 
     getMatchById(matchId) {
         return this.matches.find(match => match.id === matchId);
