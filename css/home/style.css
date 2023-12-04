@@ -4,17 +4,9 @@
 .btn-pokemon:hover{
     filter: invert(100%);
 }
-.btn-scarlet{
-    background: url(../../img/scarlet.png);
-    background-size: cover;
-}
-.btn-violet{
-    background: url(../../img/violet.png);
-    background-size: cover;
-}
 #pokemon-caro.owl-carousel .owl-item img{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     transition: 0.3s ease;
 }
 #pokemon-caro.owl-carousel .owl-item img:not(.center img){
@@ -48,6 +40,6 @@
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    width: 250px;
+    width: 200px;
     aspect-ratio: 1/1;
 }

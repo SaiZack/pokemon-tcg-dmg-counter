@@ -119,17 +119,16 @@ body {
     font-size: 1.5em;
     font-family: 'Croissant One', cursive;
     color: var(--pale-gold);
-    padding-top: 15px;
 }
 
 .btn-scarlet {
     background: url(../../img/scarlet.png);
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .btn-violet {
     background: url(../../img/violet.png);
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .btn-diamond {
@@ -387,6 +386,9 @@ body {
 @media only screen and (max-width: 767px) {
     .tab-content * {
         font-size: 12px !important;
+    }
+    .pokedex-footer span.badge{
+        font-size: .9em !important;
     }
 }
 

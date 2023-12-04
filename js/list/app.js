@@ -231,12 +231,12 @@ $(document).ready(function () {
     function createPokemonHTML(pokemon) {
         const types = pokemon.types.map(type => `
             <span class="pe-1 pb-1">
-                <span class="badge rounded-pill px-4" style="background : var(--${type.type.name}-type)">${type.type.name}</span>
+                <span class="badge rounded-pill px-sm-4 px-2" style="background : var(--${type.type.name}-type)">${type.type.name}</span>
             </span>
         `).join('');
 
         return `
-            <a href="https://www.pokemon.com/us/pokedex/${pokemon.name}" target="_blank" class="col-sm-6 col-lg-3 p-3 text-decoration-none">
+            <a href="https://www.pokemon.com/us/pokedex/${pokemon.name}" target="_blank" class="col-6 col-lg-3 p-1 p-sm-3 text-decoration-none">
                 <div class="bg-light rounded pokedex-body h-100">
                     <img src="${pokemon.sprites.other['official-artwork'].front_default}" alt="" width="100%" class="pokedex-img">
                     <div class="pokedex-footer">
